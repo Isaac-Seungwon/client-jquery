@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 td {
+            border: 1px solid black;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>테이블</h1>
+
+    <!-- table#tbl1>tr*10>td{item}*5 -->
+    <table id="tbl1">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        /*
+        $('#tbl1 td').mouseover(function() {
+            $(this).css('background-color', 'gold');
+        });
+        $('#tbl1 td').mouseout(function() {
+            $(this).css('background-color', 'transparent');
+        });
+        */
+        /*
+        $('#tbl1 td').mouseover(function () {
+            $(this).css('background-color', 'gold');
+        }).mouseout(function () {
+            $(this).css('background-color', 'transparent');
+        });
+        */
+        $('#tbl1 tr').on({
+            mouseover: function () {
+                // $(this).css('background-color', 'gold');
+                $(event.currentTarget).css('background-color', 'gold');
+            },
+            mouseout: function () {
+                // $(this).css('background-color', 'transparent');
+                $(event.currentTarget).css('background-color', 'transparent');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

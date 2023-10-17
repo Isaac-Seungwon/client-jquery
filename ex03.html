@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>jQuery Event</h1>
+    
+    <input type="button" value="버튼1" id="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" class="btn">
+
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        //1.BOM
+        //<input onclick="">
+        //btn.onclick = function() {}
+
+        //2.DOM
+        //btn.addEventListener('click', function() {});
+
+        //3.jQuery
+        //-이벤트 함수
+        //jQuery는 변수 형태의 프로퍼티가 없고 무조건 메소드 형태의 프로퍼티만 존재한다.
+        // jQuery('#btn1').css('color', 'blue');
+        // $('#btn2').css('color', 'orange');
+       
+        /*
+        $('#btn1').click(function() {
+            alert();
+        });
+
+        $('#btn2').on('click', function() {
+            alert();
+        });
+
+        $('#btn3').click(function() {
+            //이벤트 주체 확인
+            //alert(event.target.id);
+            //alert(this.id);
+
+            $('#btn2').off('click');
+        });
+        */
+
+        //버튼 3개 이벤트 추가
+        const list = document.querySelectorAll('.btn');
+
+        for (let i=0; i<list.length; i++) {
+            list[i].onclick = function() {
+                alert(event.target.value);
+            }
+        }
+        
+        
+        $('.btn').click(function() {
+            alert(event.target.value);
+        });
+
+    </script>
+</body>
+</html>

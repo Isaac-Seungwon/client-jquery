@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>jQuery() 함수</h1>
+
+    <input type="button" value="확인" name="btn1" id="btn1">
+    <hr>
+    <!-- div#box$.box{상자$}*5 -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        /*
+        const btn1 = document.getElementById('btn1');
+
+        btn1.addEventListener('click', function() {
+            jQuery('#btn1').css('color', 'blue');
+        })
+
+        */
+        //DOM
+        const list = document.getElementsByClassName('box');
+
+        for (let i=0; i<list.length; i++) {
+            list[i].style.color = 'blue';
+        }
+        
+        //forEach > new Array()에서 동작
+        //list.forEach(box => box.style.color = 'yellow'); //HTMLCollection (유사 배열)
+        Array.from(list).forEach(box => box.style.color = 'tomato');
+
+        // jQuery('.box').css('color', 'green');
+
+        //태그 선택자
+        // jQuery('div').css('color', 'orange');
+
+        //id 선택자
+        // jQuery('#box1').css('color', 'blue');
+
+        //class 선택자
+        // jQuery('.box').css('color', 'green');
+
+        //그외의 선택자
+        // jQuery('h1, div:nth-child(even)').css('color', 'tomato');
+
+        const a = document.all.btn1; //BOM
+        const b = document.getElementById('btn1'); //DOM
+        const c = jQuery('#btn1'); //jQuery
+
+        // alert(a === b);
+        // alert(b === c);
+        // alert(a === c);
+
+        a.value = 'BOM';
+        b.value = 'DOM';
+        b.setAttribute('value', 'DOM');
+        //c.value = 'jQuery'; //호환 X
+        //c.val = 'jQuery'; //호환 X
+        c.val = 'jQuery';
+        
+        jQuery(a).val('DOM');
+
+        c[0].value = 'jQuery';
+    </script>
+</body>
+</html>

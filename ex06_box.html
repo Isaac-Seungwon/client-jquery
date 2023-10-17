@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 20px solid blue;
+            width: 200px;
+            height: 200px;
+            padding: 30px;
+            margin: 50px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery + Box model</h1>
+
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="box">상자</div>
+
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        console.log('width', $('#box').css('width'));
+        console.log('height', $('#box').css('height'));
+
+        console.log('width()', $('#box').width());
+        console.log('height()', $('#box').height());
+        //$('#box').height(300);
+
+        console.log('innerWidth()', $('#box').innerWidth());
+        console.log('innerHeight()', $('#box').innerHeight());
+
+        console.log('outerWidth()', $('#box').outerWidth());
+        console.log('outerHeight()', $('#box').outerHeight());
+        
+        console.log('outerWidth(true)', $('#box').outerWidth(true));
+        console.log('outerHeight(true)', $('#box').outerHeight(true));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            color: black;
+        }
+        .one { color: blue; }
+        .two { background-color: gold; }
+    </style>
+</head>
+<body>
+    <h1>jQuery + CSS</h1>
+    <div id="box">상자</div>
+
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        /*
+
+        CSS 조작
+        1. CSS(속성) 읽기
+        2. CSS(속성, 값) 쓰기
+    
+
+        */
+
+        //alert(getComputedStyle(document.getElementById('box')).getPropertyValue('color'));
+        alert($('#box').css('color'));
+
+        //jQuery에는 내부적으로 이 작업이 되어 있다는 것을 알 수 있다.
+
+        //$('#box').css('color', 'blue');
+        $('#box').css('color', 'blue').css('background-color', 'gold').css('font-size', '3rem');
+
+        //jQuery는 연쇄적으로 작업할 수 있다는 점에서 편리하다.
+
+        $('#box').css({
+            color: 'blue',
+            backgroundColor: 'gold',
+            'font-size': '3rem'
+        });
+
+        
+        $('#box').addClass('one');
+        $('#box').addClass('two');
+        $('#box').removeClass('one');
+        $('#box').toggleClass('two');
+
+
+        /*
+        //읽기
+        1. obj.css('attr')
+        //쓰기
+        2. obj.css('attr', 'value')
+        3. obj.css('attr', 'value').css('attr', 'value').css('attr', 'value')
+        4. obj.css({
+            attr: value,
+            attr: value,
+            attr: value
+        })
+        obj.addClass('value')
+        obj.removeClass('value')
+        obj.toggleClass('value')
+        */
+
+    </script>
+</body>
+</html>

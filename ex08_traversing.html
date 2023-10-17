@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #me {
+            border: 5px solid cornflowerblue;
+        }
+
+        .check {
+            outline: 5px solid coral;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Axis</h1>
+
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="div1">
+        할아버지
+        <div>
+            큰아버지
+            <div>사촌</div>
+        </div>
+        <div>
+            아버지
+            <div>큰형</div>
+            <div>작은형</div>
+            <div id="me">나
+                <div>자식
+                    <div>손자</div>
+                    <div class="test">손자</div>
+                    <div class="test">손자</div>
+                </div>
+                <div>자식</div>
+                <div>자식</div>
+            </div>
+            <div>동생</div>
+            <div>막내동생</div>
+        </div>
+        <div>
+            작은아버지
+            <div>사촌</div>
+        </div>
+    </div>
+
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        $('#btn1').click(function() {
+            //자식
+            //children
+            // $('#me').children().first().addClass('check'); //첫째
+            // $('#me').children().last().addClass('check'); //막내
+            // $('#me').children().eq(1).addClass('check'); //둘째
+
+            //손자
+            // $('#me').children().children().addClass('check');
+
+            //$('#me > div > div.test').addClass('check');
+            // $('#me').children().children('.test').addClass('check');
+
+
+            // $('#me').find('.test').addClass('check');
+
+            // $('#me').parent().addClass('check'); //아버지
+            // $('#me').parents().addClass('check'); //부모들
+            // $('#me').parentsUntil('#div1').addClass('check'); //부모들
+
+
+            $('#me').siblings().addClass('check'); //모든 형제
+            
+        })
+    </script>
+</body>
+</html>

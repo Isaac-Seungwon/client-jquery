@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>jQuery 태그 조작</h1>
+
+    <input type="button" value="버튼" id="btn1">
+    <div id="box"></div>
+    <hr>
+    <input type="text" id="txt1">
+
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        // $('#box').text('Isaac'); //쓰기
+        // alert($('#box').text()); //읽기
+
+        // $('#box').html('<b>안녕하세요.</b>');
+
+        // $('#box').val('기본값'); //쓰기
+        // alert($('#box').val()); //읽기
+
+        //HTML 속성 조작
+        //BOM
+        // obj.prop //읽기
+        // obj.prop = value //쓰기
+
+        //DOM
+        // obj.getAttribute('prop')
+        // obj.getAttribute('prop', value)
+
+        // $('#txt1').attr('size', 50); //읽기
+        // alert($('#txt1').attr('size')); //쓰기
+
+        // $('#txt1').prop('size', 50); //읽기
+        // alert($('#txt1').prop('size')); //쓰기
+
+        // $('#txt1').attr('size', 10).attr('title', '입력하세요.').attr('maxlength', 5);
+
+        // $('#txt1').attr({
+        //     size: 10,
+        //     title: '입력하세요',
+        //     maxlength: 5
+        // })
+
+        //box.innerHTML = "<img>";
+        // $('#box').html('<img src="../asset/images/dog01.jpg">');
+
+        //box.innerHTML += "<img>";
+        // $('#box').html($('#box').html() + '<img src="../asset/images/dog01.jpg">');
+        
+        //위와 같은 누적하면서 추가하는 작업을 append와 prepend로 할 수 있다.
+
+        // let n = 0;
+
+        // $('#box').append(`<img src="../asset/images/dog0${n}.jpg">`);
+        
+        // n = 1;
+
+        // $('#box').prepend(`<img src="../asset/images/dog01.jpg">`);
+        
+
+        // $('#box').append($(`<img src="../asset/images/dog01.jpg">`).css('border', '1px solid black'));
+
+        // $('#box').append('<input>');
+
+        //$('#box').appenTo($('<input>'));
+        // $('<input>').appendTo($('#box'));
+
+        // $('#box').append($('<input>').attr('size', 10).css('color', 'blue'));
+        
+        // $('#box').attr('size', 10).css('color', 'blue').appendTo($('#box'));
+
+
+        $('input').remove();
+
+        
+    </script>
+</body>
+</html>

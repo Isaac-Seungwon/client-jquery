@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex01.html -->
+
+    <!-- 로컬 방식 -->
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+
+    <!-- CDN 방식 -->
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script> -->
+
+    <input type="text" name="txt1" id="txt1">
+
+    <script>
+        //1. BOM > BOM 트리
+        document.all.txt1.value = 'BOM';
+
+        //2. DOM > getXXX 메소드 or DOM 트리
+        document.getElementById('txt1').value = 'DOM';
+
+        //3. jQuery > jQuery() 함수
+        jQuery('#txt1').val('jQuery');
+        //jQuery(CSS 선택자)
+        //검색할 함수를 jQuery() 함수를 찾는데, 여기에 CSS 선택자를 넣을 수 있다.
+        //이는 document.querySelectorAll()과 기능이 같다.
+
+    </script>
+</body>
+</html>

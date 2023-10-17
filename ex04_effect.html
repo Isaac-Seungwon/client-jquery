@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Effect</h1>
+    
+    <input type="button" value="버튼1" id="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" class="btn">
+    
+    <hr>
+
+    <div id="box">상자</div>
+
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        $('#btn1').click(function() {
+            // const obj = {
+            //     width: '400px',
+            //     height: '400px'
+            // };
+            // $('#box').animate(obj);
+
+            // $('#box').animate({
+            //     width: '400px',
+            //     height: '400px'
+            // });
+
+            // $('#box').animate({
+            //     width: '+=100px',
+            //     height: '+=50'
+            // });
+
+            $('#box').animate({
+                marginLeft: '+=50px'
+            }, 1000, function() {
+                $('h1').text('jQuery Effect ' + n);
+                n++;
+
+                if (n > 5) {
+                    $('#btn1').off('click');
+                }
+            });
+        });
+
+        $('#btn2').click(function() {
+            $('#box')
+                .slideUp()
+                .slideDown()
+                .fadeOut()
+                .fadeIn()
+                .animate({
+                    borderWidth: '10px'
+                });
+        });
+
+        $('#btn3').click(function() {
+            $('#box').animate();
+        });
+    </script>
+</body>
+</html>
